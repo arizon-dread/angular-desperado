@@ -1,0 +1,31 @@
+<div class="container">
+  <h3 class="h3">Översätt text till rövarspråket.</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <form class="form" [formGroup]="desperadoForm" (ngSubmit)="onSubmit()"> <!--[formGroup]="desperadoForm" -->
+        <div class="card">
+          <div class="card-header">
+            Rövarspråks-input
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Skriv din text</h4>
+            <textarea type="text" formControlName="desperadoInput" class="form-control" name="desperadoInput" id="desperadoInput" aria-describedby="helpId" placeholder=""></textarea>
+          </div>
+          <div class="card-footer text-muted">
+            <input type="submit" class="btn btn-success" value="Röva min text!" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6"> <!-- *ngIf="[desperadoResponse?.text] != null"-->
+      <div class="card">
+        <div class="card-header">
+          Rövad text
+        </div>
+        <div class="card-body">
+          <p>{{ desperadoResponse?.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
