@@ -9,7 +9,7 @@ import { Config } from '../models/config';
 })
 export class ConfigService {
 
-  configUrl = '/config.json';
+  configUrl = '/config/cfg.json';
   config: Config | undefined;
   constructor(private httpClient: HttpClient) { }
 
