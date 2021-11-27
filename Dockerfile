@@ -1,8 +1,10 @@
-FROM alpine:3.15 AS build
-RUN apk add --update npm
-COPY . /app/
+FROM node:14.18-alpine3.14 AS build
 WORKDIR /app
-RUN npm install -g @angular/cli && ng build
+COPY package.json /app/
+RUN npm install
+COPY . /app/
+ARG configuration=production
+RUN npm run build -- --outputPath=./dist --configuration $configuration
 
 FROM nginx:1.21-alpine
-COPY dist/angular-desperado/* /usr/share/nginx/html/
+COPY --from=build /app/dist/ /usr/share/nginx/html/
