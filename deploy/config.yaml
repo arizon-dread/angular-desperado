@@ -2,7 +2,7 @@ apiVersion: v1
 data:
   cfg.json: |-
     {
-      "apiBaseUrl": "http://localhost:8080/backend"
+      "apiBaseUrl": "http://api.localhost:8081/"
     }
 kind: ConfigMap
 metadata:

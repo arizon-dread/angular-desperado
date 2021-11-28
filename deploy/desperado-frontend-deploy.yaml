@@ -21,4 +21,14 @@ spec:
       - image: k3d-registry.localhost:5000/angular-desperado:v0.1
         name: angular-desperado
         resources: {}
+        volumeMounts:
+        - name: config
+          mountPath: /usr/share/nginx/html/config
+      volumes:
+      - name: config
+        configMap:
+          name: config
+          items:
+          - key: cfg.json
+            path: cfg.json
 status: {}

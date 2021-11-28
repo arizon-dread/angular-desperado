@@ -2,4 +2,4 @@ resources:
   - config.yaml
   - desperado-frontend-deploy.yaml
   - desperado-frontend-svc.yaml
-  - frontend-ingress
+  - frontend-ingress.yaml
