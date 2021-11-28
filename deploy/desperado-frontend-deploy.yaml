@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: desperado-frontend
+  name: desperado-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desperado-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: desperado-frontend
+    spec:
+      containers:
+      - image: k3d-registry.localhost:5000/angular-desperado:v0.1
+        name: angular-desperado
+        resources: {}
+status: {}
