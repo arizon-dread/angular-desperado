@@ -7,12 +7,16 @@ import { DesperadoComponent } from './desperado/desperado.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DesperadoComponent,
+    NavbarComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
