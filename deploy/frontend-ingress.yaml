@@ -17,15 +17,5 @@ spec:
               number: 80
         path: /
         pathType: Prefix
-  - host: api.localhost
-    http:
-      paths:
-      - backend:
-          service:
-            name: desperado-backend
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
 status:
   loadBalancer: {}

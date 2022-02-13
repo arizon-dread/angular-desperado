@@ -9,14 +9,18 @@ import { Config } from '../models/config';
 })
 export class ConfigService {
 
-  configUrl = 'config/cfg.json';
+  configUrl = '/config/cfg.json';
   config: Config | undefined;
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+    this.getConfig().subscribe((data: Config) => {
+      this.config = data;
+    });
+  }
 
   getConfig(): Observable<Config> {
-    console.log("About to get config...");
+    console.log("About to get config..." + window.location.origin + this.configUrl);
 
-    return this.httpClient.get<Config>(window.location + this.configUrl)
+    return this.httpClient.get<Config>(window.location.origin + this.configUrl)
     .pipe(
       catchError(this.handleError<Config>("getConfig", this.config = { apiBaseUrl: ""}))
     )

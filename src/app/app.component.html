@@ -1,45 +1,38 @@
 <!-- Toolbar -->
 <div class="wrapper">
-<div class="toolbar" role="banner">
-  <a (click)="toggleMenu()"><i class="fas fa-bars ml-2"></i></a>
-  <div class="h3 m-2"><span>Rövarspråket</span></div>
-  <div class="spacer"></div>
-</div>
+  <div class="toolbar" role="banner">
+    <a (click)="toggleMenu()"><i class="fas fa-bars ml-2"></i></a>
+    <div class="h3 m-2"><span>Rövarspråket</span></div>
+    <div class="spacer"></div>
+  </div>
 
-<div class="row toolbar-escape">
-  <div class="col-2 border-right" [hidden]="!menuVisible">
-    <div id="nav" >
-      <app-navbar></app-navbar>
+  <div class="row toolbar-escape">
+    <div class="col-2" [hidden]="!menuVisible">
+      <div id="nav">
+        <app-navbar></app-navbar>
+      </div>
+    </div>
+    <div class="col-9 shadow pt-3 ml-3" role="main">
+        <router-outlet></router-outlet>
     </div>
   </div>
-  <div class="content" role="main">
-    <div class="col-10">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
 </div>
 
 <footer class="footer">
   <div class="container">
     <div class="row border-top border-1">
       <div class="col col-3 no-gutters d-flex mt-1">
-        <i class="fab fa-github"></i> &nbsp;
-        <a
-          href="https://github.com/arizon-dread/fastapi-desperado"
-          target="_blank"
-          >Backend api on github &nbsp;
-          <i class="fas fa-external-link-alt"></i></a
-        ><br />
+        <fa-icon [icon]="faGithub"></fa-icon> &nbsp;
+        <a href="https://github.com/arizon-dread/fastapi-desperado"
+          target="_blank">Backend api on github &nbsp;
+          <fa-icon [icon]="faExternalLink"></fa-icon></a>
+          <br />
       </div>
       <div class="col col-3 mt-1 d-flex">
-        <i class="fab fa-github"></i> &nbsp;
-        <a
-          href="https://github.com/arizon-dread/angular-desperado"
-          target="_blank"
-          >Frontend angular app on github &nbsp;
-          <i class="fas fa-external-link-alt"></i
-        ></a>
+        <fa-icon [icon]="faGithub"></fa-icon> &nbsp;
+        <a href="https://github.com/arizon-dread/angular-desperado"
+          target="_blank">Frontend angular app on github &nbsp;
+          <fa-icon [icon]="faExternalLink"></fa-icon></a>
       </div>
     </div>
   </div>

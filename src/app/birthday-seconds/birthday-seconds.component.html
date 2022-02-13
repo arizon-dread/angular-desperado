@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-12">
+    <h3>Räkna ut sekunder sedan du föddes</h3>
+  </div>
+  <div class="col-md-6 mb-3">
+    <div class="card">
+      <div class="card-header">Välj födelsedatum</div>
+      <div class="card-body">
+        <!-- <mat-form-field appearance="fill">
+          <input matInput [matDatepicker]="dp" type="datetime-local" placeholder="Välj datum">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+        </mat-form-field> -->
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <label class="mr-2">Välj din födelsedag</label>
+              <input class="form-control" placeholder="yyyy-mm-dd"
+                     name="d" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><fa-icon [icon]="faCalendar"></fa-icon></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Sekunder sedan du föddes:
+      </div>
+      <div class="card-body">
+        {{seconds}}
+      </div>
+    </div>
+
+  </div>
+</div>
