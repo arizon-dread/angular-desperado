@@ -6,23 +6,16 @@
     <div class="card">
       <div class="card-header">Välj födelsedatum</div>
       <div class="card-body">
-        <!-- <mat-form-field appearance="fill">
-          <input matInput [matDatepicker]="dp" type="datetime-local" placeholder="Välj datum">
-          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-          <mat-datepicker #dp></mat-datepicker>
-        </mat-form-field> -->
-        <form class="form-inline">
-          <div class="form-group">
-            <div class="input-group">
-              <label class="mr-2">Välj din födelsedag</label>
-              <input class="form-control" placeholder="yyyy-mm-dd"
-                     name="d" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><fa-icon [icon]="faCalendar"></fa-icon></button>
-              </div>
+          <div class="row">
+            <div class="input-group col-md-6">
+              <fa-icon [icon]="faCalendar" [owlDateTimeTrigger]="dt" class="mt-2 mr-2"></fa-icon>
+              <input class="form-control" [(ngModel)]="bdaySeconds" [owlDateTime]="dt" [owlDateTimeTrigger]="dt" placeholder="Fyll i din födelsedag" />
+              <owl-date-time [startAt]="startAt" #dt></owl-date-time>
+            </div>
+            <div class="col-md-6 ">
+              <button class="btn btn-primary" (click)=calculateSeconds()>Beräkna sekunder</button>
             </div>
           </div>
-        </form>
       </div>
     </div>
   </div>
