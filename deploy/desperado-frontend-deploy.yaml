@@ -18,7 +18,7 @@ spec:
         app: desperado-frontend
     spec:
       containers:
-      - image: k3d-registry.localhost:5000/angular-desperado:v0.1
+      - image: k3d-registry.localhost:5000/angular-desperado:v0.2
         imagePullPolicy: Always
         name: angular-desperado
         resources: {}
